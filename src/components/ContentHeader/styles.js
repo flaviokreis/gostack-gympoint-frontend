@@ -10,4 +10,8 @@ export const Header = styled.div`
     h1 {
         color: #444;
     }
+
+    > div {
+        display: flex;
+    }
 `;

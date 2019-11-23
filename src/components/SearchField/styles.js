@@ -10,7 +10,7 @@ export const SearchContainer = styled.div`
     }
     input {
         color: #444;
-        height: 32px;
+        height: 35px;
         width: 200px;
         font-size: 14px;
         border: 1px solid #ddd;
