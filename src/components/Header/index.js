@@ -11,7 +11,7 @@ export default function Header() {
             <Content>
                 <nav>
                     <img src={logo} alt="GoBarber" />
-                    <Link to="/studends">ALUNOS</Link>
+                    <Link to="/students">ALUNOS</Link>
                     <Link to="/plans">PLANOS</Link>
                     <Link to="/registrations">MATRÍCULAS</Link>
                     <Link to="/help-orders">PEDIDO DE AUXÍLIO</Link>

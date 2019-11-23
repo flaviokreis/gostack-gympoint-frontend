@@ -9,7 +9,7 @@ import Student from '../pages/Student';
 import EditStudent from '../pages/EditStudent';
 import PlanList from '../pages/Plan';
 import EditPlan from '../pages/EditPlan';
-import Registration from '../pages/Registration';
+import RegistrationList from '../pages/Registration';
 import EditRegistration from '../pages/EditRegistration';
 import HelpOrder from '../pages/HelpOrder';
 
@@ -24,12 +24,17 @@ export default function Routes() {
             <Route path="/plans/edit" component={EditPlan} isPrivate />
             <Route path="/plans" component={PlanList} isPrivate />
 
-            <Route path="/registrations" component={Registration} isPrivate />
             <Route
                 path="/registrations/edit"
                 component={EditRegistration}
                 isPrivate
             />
+            <Route
+                path="/registrations"
+                component={RegistrationList}
+                isPrivate
+            />
+
             <Route path="/help-orders" component={HelpOrder} isPrivate />
         </Switch>
     );
