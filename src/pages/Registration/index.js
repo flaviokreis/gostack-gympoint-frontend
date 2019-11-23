@@ -14,11 +14,11 @@ import api from '../../services/api';
 import history from '../../services/history';
 
 import {
-    Container,
-    RegistrationTable,
+    ListContainer,
+    Table,
     EditButton,
     DeleteButton,
-} from './styles';
+} from '../_layouts/default/styles';
 
 export default function RegistrationList() {
     const [registrations, setRegistrations] = useState([]);
@@ -78,12 +78,12 @@ export default function RegistrationList() {
     }
 
     return (
-        <Container>
+        <ListContainer>
             <ContentHeader>
                 <h1>Gerenciamento matrículas</h1>
                 <RegisterButton to="/registrations/edit" />
             </ContentHeader>
-            <RegistrationTable>
+            <Table>
                 <thead>
                     <th>ALUNO</th>
                     <th>PLANO</th>
@@ -121,13 +121,13 @@ export default function RegistrationList() {
                         </tr>
                     ))}
                 </tbody>
-            </RegistrationTable>
+            </Table>
             <Pagination
                 page={page}
                 onPrevious={handlePreviousPage}
                 onNext={handleNextPage}
                 hasNext={hasNext}
             />
-        </Container>
+        </ListContainer>
     );
 }

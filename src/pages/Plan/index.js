@@ -10,7 +10,12 @@ import api from '../../services/api';
 
 import history from '../../services/history';
 
-import { Container, PlanTable, EditButton, DeleteButton } from './styles';
+import {
+    ListContainer,
+    Table,
+    EditButton,
+    DeleteButton,
+} from '../_layouts/default/styles';
 
 export default function PlanList() {
     const [plans, setPlans] = useState([]);
@@ -61,12 +66,12 @@ export default function PlanList() {
     }
 
     return (
-        <Container>
+        <ListContainer>
             <ContentHeader>
                 <h1>Gerenciamento planos</h1>
                 <RegisterButton to="/plans/edit" />
             </ContentHeader>
-            <PlanTable>
+            <Table>
                 <thead>
                     <th colSpan="7">TÍTULO</th>
                     <th>DURAÇÃO</th>
@@ -94,13 +99,13 @@ export default function PlanList() {
                         </tr>
                     ))}
                 </tbody>
-            </PlanTable>
+            </Table>
             <Pagination
                 page={page}
                 onPrevious={handlePreviousPage}
                 onNext={handleNextPage}
                 hasNext={hasNext}
             />
-        </Container>
+        </ListContainer>
     );
 }

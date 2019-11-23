@@ -9,7 +9,12 @@ import api from '../../services/api';
 
 import history from '../../services/history';
 
-import { Container, StudentTable, EditButton, DeleteButton } from './styles';
+import {
+    ListContainer,
+    Table,
+    EditButton,
+    DeleteButton,
+} from '../_layouts/default/styles';
 
 export default function Student() {
     const [students, setStudents] = useState([]);
@@ -55,7 +60,7 @@ export default function Student() {
     }
 
     return (
-        <Container>
+        <ListContainer>
             <ContentHeader>
                 <h1>Gerenciamento alunos</h1>
                 <div>
@@ -63,7 +68,7 @@ export default function Student() {
                     <SearchField />
                 </div>
             </ContentHeader>
-            <StudentTable>
+            <Table>
                 <thead>
                     <th colSpan="5">NOME</th>
                     <th colSpan="5">E_MAIL</th>
@@ -93,13 +98,13 @@ export default function Student() {
                         </tr>
                     ))}
                 </tbody>
-            </StudentTable>
+            </Table>
             <Pagination
                 page={page}
                 onPrevious={handlePreviousPage}
                 onNext={handleNextPage}
                 hasNext={hasNext}
             />
-        </Container>
+        </ListContainer>
     );
 }
