@@ -3,7 +3,6 @@ import { parseISO, format } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 
 import { MdCheckCircle } from 'react-icons/md';
-import { formatPrice } from '../../util/format';
 
 import RegisterButton from '../../components/RegisterButton';
 import ContentHeader from '../../components/ContentHeader';

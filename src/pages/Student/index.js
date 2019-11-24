@@ -64,7 +64,7 @@ export default function Student() {
             <ContentHeader>
                 <h1>Gerenciamento alunos</h1>
                 <div>
-                    <RegisterButton to="/students/edit" />
+                    <RegisterButton to="/students/create" />
                     <SearchField />
                 </div>
             </ContentHeader>

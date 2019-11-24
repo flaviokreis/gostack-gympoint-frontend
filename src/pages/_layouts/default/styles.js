@@ -11,6 +11,20 @@ export const ListContainer = styled.div`
     margin: 30px calc(10%);
 `;
 
+export const EditContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 30px calc(25%);
+`;
+
+export const Card = styled.div`
+    width: 100%;
+
+    padding: 30px;
+    background: #fff;
+    border-radius: 4px;
+`;
+
 export const Table = styled.table`
     width: 100%;
 

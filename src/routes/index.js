@@ -6,7 +6,9 @@ import Route from './Route';
 import SignIn from '../pages/Signin';
 
 import Student from '../pages/Student';
-import EditStudent from '../pages/EditStudent';
+import CreateStudent from '../pages/Student/create';
+import EditStudent from '../pages/Student/edit';
+
 import PlanList from '../pages/Plan';
 import EditPlan from '../pages/EditPlan';
 import RegistrationList from '../pages/Registration';
@@ -18,6 +20,11 @@ export default function Routes() {
         <Switch>
             <Route path="/" exact component={SignIn} />
 
+            <Route
+                path="/students/create"
+                component={CreateStudent}
+                isPrivate
+            />
             <Route path="/students/edit" component={EditStudent} isPrivate />
             <Route path="/students" component={Student} isPrivate />
 
