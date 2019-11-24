@@ -69,7 +69,7 @@ export default function PlanList() {
         <ListContainer>
             <ContentHeader>
                 <h1>Gerenciamento planos</h1>
-                <RegisterButton to="/plans/edit" />
+                <RegisterButton to="/plans/create" />
             </ContentHeader>
             <Table>
                 <thead>
