@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
@@ -34,19 +35,24 @@ export default function CreateStudent() {
     }
 
     async function handleSubmit({ name, email, age, weight, height }) {
-        try {
-            const params = {
-                name,
-                email,
-                age,
-                weight,
-                height,
-            };
+        const params = {
+            name,
+            email,
+            age,
+            weight,
+            height,
+        };
 
-            await api.post('/students', params);
-
-            handleBackButton();
-        } catch (err) {}
+        await api
+            .post('/students', params)
+            .then(() => {
+                toast.success('Estudante adicionado com sucesso!', {
+                    onClose: () => history.push('/students'),
+                });
+            })
+            .catch(err => {
+                toast.error(err.error || 'Erro ao tentar salvar o estudante!');
+            });
     }
 
     return (

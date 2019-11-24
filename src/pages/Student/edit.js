@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import { MdCheck, MdChevronLeft } from 'react-icons/md';
 
@@ -32,19 +33,22 @@ export default function EditStudent(props) {
     const [student, setStudent] = useState(props.location.state.student);
 
     async function handleSubmit({ name, email, age, weight, height }) {
-        try {
-            const params = {
+        await api
+            .put(`/students/${student.id}`, {
                 name,
                 email,
                 age,
                 weight,
                 height,
-            };
-
-            await api.put(`/students/${student.id}`, params);
-
-            history.goBack();
-        } catch (err) {}
+            })
+            .then(() => {
+                toast.success('Estudante atualizado com sucesso!', {
+                    onClose: () => history.push('/students'),
+                });
+            })
+            .catch(err => {
+                toast.error(err.error || 'Erro ao atualizar!');
+            });
     }
 
     function handleBackButton() {
